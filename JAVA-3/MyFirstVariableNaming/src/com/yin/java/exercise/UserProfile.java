@@ -1,3 +1,4 @@
+package com.yin.java.exercise;
 import java.util.Scanner;
 import java.time.LocalDate;
 

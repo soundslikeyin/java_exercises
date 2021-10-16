@@ -6,20 +6,44 @@ public class Circle {
     float diameter;
     float perimeter;
     float area;
-    float radius;
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
         Circle circleA = new Circle();
-
-        System.out.println("Please enter diameter of the circle: ");
-        circleA.diameter = input.nextFloat();
-        circleA.radius = circleA.diameter / 2;
-        circleA.area = (float)(Math.pow(circleA.radius, 2) * Math.PI);
-        circleA.perimeter = (float)(circleA.diameter * Math.PI);
+        circleA.diameter = getDiameter();
+        circleA.area = getArea(circleA.diameter);
+        circleA.perimeter = getPerimeter(circleA.diameter);
 
         System.out.println("The area of the circle is:" + circleA.area);
         System.out.println("The perimeter of the circle is:" + circleA.perimeter);
     }
+
+
+    public static float getDiameter(){
+        Scanner in = new Scanner(System.in);
+        boolean inputValid = false;
+        float diameter = 0f;
+
+        while (!inputValid) {
+            System.out.println("Please enter diameter of the circle: ");
+            String input = in.next();
+            try {
+                diameter = Float.parseFloat(input);
+                inputValid = true;
+            }  catch (NumberFormatException e) {
+                System.out.println("You didn't enter a valid number.");
+            }
+        }
+        return diameter;
+    }
+
+    public static float getArea(float diameter) {
+        return (float)(Math.pow(diameter/2, 2) * Math.PI);
+    }
+
+    public static float getPerimeter(float diameter) {
+        return (float)(diameter * Math.PI);
+    }
+
+
 }
 

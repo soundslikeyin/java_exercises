@@ -1,15 +1,18 @@
 package com.yin.java.exercise;
+import org.w3c.dom.ls.LSOutput;
+
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
     public class MovieDiscounts {
-            public static final int ticketPrice = 7;
-            public static final Scanner in = new Scanner(System.in);
+        public static final Scanner in = new Scanner(System.in);
+        private static int ticketPrice = 7;
 
 
         public static void main(String[] args) {
             int age = getAge();
             int ticketQuantity = getTicketQuantity();
-            int ticketSales = ticketQuantity * ticketPrice;
+            int ticketSales = ticketQuantity * MovieDiscounts.ticketPrice;
 
             // assuming that age discount is applied to all the tickets purchased by person with the discount
             int ageDiscountPercentage = ageDiscountCalculator(age);

@@ -7,9 +7,12 @@ public class Main {
         Student studentA = new Student("Nicole","Stewart", 1 );
         Student studentB = new Student("Sarah","Windsor", 1);
         Student studentC = new Student("Elizabeth","Blois", 1);
+        Student studentD = new Student("Yvonne","Lim", 1);
         studentA.grade = 50;
         studentB.grade = 60;
         studentC.grade = 70;
+        studentD.grade = 60;
+
 
         Course basicJava = new Course("Basic Java", "Hugo Sum", 2021);
 
@@ -17,7 +20,7 @@ public class Main {
 //        basicJava.enroll(studentB);
 //        basicJava.enroll(studentC);
 
-        Student[] students = {studentA, studentB, studentC};
+        Student[] students = {studentA, studentB, studentC, studentD};
         basicJava.enroll(students);
         System.out.println("There are " + basicJava.countStudents()+ " students in the " + basicJava.courseName + " course");
         basicJava.printStudentList();

@@ -2,6 +2,7 @@ package com.yin.java.exercise;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 
 public class Course {
@@ -77,13 +78,13 @@ public class Course {
 
     public void printRankingList() {
         Student[] rankedStudentList  = this.studentList.toArray(new Student[0]);
-
-//        ArrayList<Student> rankedStudentList = new ArrayList<>(this.studentList);
-//        rankedStudentList.sort(Comparator.comparing(a -> a.grade));
-
         Comparator<Student> studentGradeComparator = Comparator.comparing(Student::getGrade).reversed();
         Arrays.sort(rankedStudentList, studentGradeComparator);
 
+//        Alternative method using ArrayList
+//        ArrayList<Student> rankedStudentList = new ArrayList<>(this.studentList);
+//        rankedStudentList.sort(Comparator.comparing(a -> a.grade));
+//        rankedStudentList.sort(Comparator.comparing(Student::getGrade).reversed());
 
         System.out.println("Student ranking list");
         int rankNo = 1;
@@ -93,6 +94,7 @@ public class Course {
             rankNo++;
             }
     }
+
 
     public boolean isAboveAverage(Student student){
 
